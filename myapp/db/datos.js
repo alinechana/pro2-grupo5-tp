@@ -10,24 +10,16 @@ let usuario = {
 
 
 let productos = [
-    {}, 
+    {comentarios: [ {
+        usuario: "", 
+        texto: "",
+        foto: "",
+    }
+    
+    ]
+        
+    }, 
 
-    {},
-
-    {},
-
-    {},
-
-    {},
-
-    {},
-
-    {},
-
-    {},
-
-    {},
-
-    {},
 ]
+
 
