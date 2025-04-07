@@ -1,29 +1,33 @@
 
 let usuario = { 
-
-
+    mail: "jzanatta@udesa.edu.ar", 
+    usuario: "jochuzanatta",
+    contraseña: "123445566",
+    fechaDeNacimiento: "12/05/2006", 
+    documento: 47384229, 
+    fotoDePerfil: "", 
 }; 
 
 
 let productos = [
-    producto1 = {}, 
+    {}, 
 
-    producto2 = {},
+    {},
 
-    producto3 = {},
+    {},
 
-    producto4 = {},
+    {},
 
-    producto5 = {},
+    {},
 
-    producto6 = {},
+    {},
 
-    producto7 = {},
+    {},
 
-    producto8 = {},
+    {},
 
-    producto9 = {},
+    {},
 
-    producto10 = {},
+    {},
 ]
 
