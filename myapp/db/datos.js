@@ -13,52 +13,52 @@ let datos = {
             {nombreProducto: "Sudadera Oversize Cremallera",
             fotoProducto: "",
             descripcion: "Sudadera con capucha confeccionada en hilatura con algodón. Manga larga acabada en puño. Cierre frontal con cremallera metálica.", 
-            id: "" }, 
+            id: 1 }, 
 
             {nombreProducto: "Jeans ZW Collection Relaxed tiro medio",
             fotoProducto: "",
             descripcion: "Jeans de tiro medio y cintura con trabillas ajustable con cordones a contraste. Cinco bolsillos. Efecto lavado. Cierre frontal con cremallera y botón.", 
-            id: ""}, 
+            id: 2}, 
 
             {nombreProducto: "Mono Corto Denim TRF Fluido",
             fotoProducto: "",
             descripcion:"Mono confeccionado en tejido fluido de cuello solapa Manga larga con hombro caído acabada en puño con pliegues. Bolsillo de plastrón en el pecho. Cierre frontal con botones.",
-            id: ""}, 
+            id: 3}, 
 
             {nombreProducto: "Jersey Rústico",
             fotoProducto: "",
             descripcion:"Jersey confeccionado en hilatura con algodón. Cuello barco y manga larga.",
-            id: ""}, 
+            id: 4}, 
 
             {nombreProducto:"Trench Corto Efecto Piel" ,
             fotoProducto: "",
             descripcion:"Trench corto de cuello solapa y manga larga acabada en puño con trabilla. Bolsillos laterales. Forro interior combinado. Cinturón en mismo material. Cierre frontal con botones.",
-            id: ""}, 
+            id: 5}, 
 
             {nombreProducto:"Top Halter Satinado ZW Collection",
             fotoProducto: "",
             descripcion:"Top halter confeccionado en tejido satinado. Espalda descubierta. Bajo asimétrico. Cierre en cuello con botones.",
-            id: ""}, 
+            id: 6}, 
 
             {nombreProducto: "Jeans Z1975 Culotte tiro alto Botones",
             fotoProducto: "",
             descripcion:"Jeans de tiro alto con bolsillos de plastrón en delantero y espalda. Pernera ancha y corta. Cierre frontal con botones.",
-            id: ""}, 
+            id: 7}, 
 
             {nombreProducto:"Blazer Oversize",
             fotoProducto: "",
             descripcion:"Blazer oversize de cuello solapa y manga larga con hombreras. Bolsillos de doble vivo en delantero. Bajo con aberturas en espalda. Cierre frontal cruzado con botones.",
-            id: ""}, 
+            id: 8}, 
 
             {nombreProducto:"Sudadera Capucha Bolsillos",
             fotoProducto: "",
             descripcion:"Sudadera con capucha confeccionada en hilatura con mezcla de algodón. Manga larga. Bolsillos laterales ocultos en costura.",
-            id: ""}, 
+            id: 9}, 
 
             {nombreProducto:"Camiseta Interlock Lavada",
             fotoProducto: "",
             descripcion:"Camiseta confeccionada en hilatura con mezcla de algodón. Cuello redondo y manga corta caída.",
-            id: ""}, 
+            id: 10}, 
     ], 
 
 
@@ -67,66 +67,66 @@ let datos = {
         usuario: "jnavarro@udesa.edu.ar", 
         texto: "Divino el color!!",
         foto: "",
-        id: ""
+        id: 1
         }, 
 
         { 
         usuario: "jzanatta@udesa.edu.ar", 
         texto: "Es bastante rígido el jean. No me gustó",
         foto: "",
-        id: ""
+        id: 2
         }, 
 
         {
         usuario: "jnavarro@udesa.edu.ar", 
         texto: "Buenisimo cuando no tenes que ponerte!",
         foto: "",
-        id: ""
+        id: 3
         }, 
 
         {
         usuario: "jzanatta@udesa.edu.ar", 
         texto: "No es muy abrigado",
         foto: "",
-        id: ""
+        id: 4
         }, 
 
         {
         usuario: " jzanatta@udesa.edu.ar", 
         texto: "Increíble calidad",
         foto: "",
-        id: ""
+        id: 5
         }, 
 
         {usuario: "achana@udesa.edu.ar", 
         texto: "Divino el cuello del top",
         foto: "",
-        id: ""}, 
+        id: 6}, 
 
         {usuario: "jnavarro@udesa.edu.ar", 
         texto: "Son bastante largos",
         foto: "",
-        id: ""}, 
+        id: 7}, 
 
         {usuario: "achana@udesa.edu.ar", 
         texto: "Perfecto para el trabajo",
         foto: "",
-        id: ""}, 
+        id: 8}, 
 
         {usuario: "dgonzalez@udesa.edu.ar", 
         texto: "Muy cómodo",
         foto: "",
-        id: ""}, 
+        id: 9}, 
 
         {usuario: "jzanatta@udesa.edu.ar", 
         texto: "Me copa el color, combina con todo",
         foto: "",
-        id: ""}, 
+        id: 10}, 
 
         {usuario: "juanitoperez", 
         texto: "",
         foto: "",
-        id: ""
+        id: 11
         }
     ]
 
