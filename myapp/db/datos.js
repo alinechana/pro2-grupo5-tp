@@ -132,7 +132,7 @@ let datos = {
 
 }; 
 
-
+module.exports = datos; 
 
 
 
