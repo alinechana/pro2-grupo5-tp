@@ -4,12 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
+var indexRouter = require('./routes/index'); //los prefijos de las rutas van aca
 var usersRouter = require('./routes/users');
 let productRouter = require("./routes/product")
 
 
-var app = express();
+var app = express(); //funcion de alto nivel
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
