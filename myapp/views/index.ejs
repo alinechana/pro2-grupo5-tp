@@ -27,12 +27,20 @@
 							<img src="/images/products/default-image.png" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
+							
 							<% for (let i = 0; i < datos.productos.length; i++) { %>
 								<a href="/products/id/<%= datos.productos[i].id %>"> 
-								<%= <h2>datos.productos[i].nombreProducto</h2> %>
-								<%= <p> datos.productos[i].descripcion </p> %>
-								<p>Comentarios: 12</p>
-								
+									<h2> <%= datos.productos[i].nombreProducto %> </h2>
+								    <p> <%= datos.productos[i].descripcion %> </p> 
+
+								<% for (let i = 0; i < datos.comentarios.length; i++) { %>
+										<a href="/products/id/<%= datos.productos[i].id %>"> 
+											<h2> <%= datos.comentarios[i].usuario  %> </h2>
+											<p> <%=  datos.comentarios[i].texto  %> </p>
+										    <img class="img" src="/images/<%= datos.comentarios.foto %>" 
+											alt="foto"> 
+										<% } %>
+									
 							<% } %>
 							
 						</article>
