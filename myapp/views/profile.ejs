@@ -12,11 +12,11 @@
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-				<img src="https://via.placeholder.com/150" alt="foto de perfil" class="foto-perfil">
+				<img src="/images/users/<%= usuario.fotoDePerfil%>" alt="cafetera moulinex">
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title"> <%= datos.usuario.usuario %>
+					<h1 class="main-title"> <%= usuario.usuario %> <!-- directamente llamo a la propiedad que ya defini en el controlador usuario.usuario -->
 						<a href="./profile-edit"> <!-- NO EXISTE ESTE EJS -->
 							<i class="fas fa-cog"></i>
 						</a>

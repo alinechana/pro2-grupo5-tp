@@ -1,3 +1,4 @@
+const datos = require("../db/datos");
 const usersController = {
     register: function (req, res) {
         return res.render("register")
@@ -7,7 +8,7 @@ const usersController = {
       return res.render("login")
     },
     profile: function (req, res) {
-      return res.render("profile")
+      return res.render("profile", {usuario: datos.usuario}) // defino que usuario = datos.usuario
     }
 }
 
