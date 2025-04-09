@@ -19,14 +19,14 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="/images/products/default-image.png" alt="" class="product-detail-img">
+					<img src="/images/products/<%= detalle.fotoProducto %>" alt="" class="product-detail-img">
 					<p class="product-detail-description"> <%= detalle.descripcion %></p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 						<% for (let i = 0; i < comentarios.length; i++) { %>
 							<article>
-								<img src="https://via.placeholder.com/35" alt="">
+								<img src="/images/users/<%= comentarios[i].foto %>" alt="">
 								<div class="data">
 									<p class="user">
 									<strong> <a href="/users/profile"><%= comentarios[i].usuario %> </a> </strong>

@@ -476,6 +476,15 @@ textarea.form-input {
   color: #fff;
 }
 
+/*====== Index ======*/
+.img {
+  width: 12%;
+  border-radius: 100%;
+}
+
+.usuario {
+  font-size: 10px;
+}
 
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {

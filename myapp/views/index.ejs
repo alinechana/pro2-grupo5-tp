@@ -26,18 +26,18 @@
 					<section class="product-box">
 						<a href="/products/id/<%= datos.productos[i].id %>"> 
 						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex"> <!-- IMG PRODUCTO QUE FALTA-->>
+							<img src="/images/products/<%= datos.productos[i].fotoProducto%>" alt="cafetera moulinex"> <!-- IMG PRODUCTO QUE FALTA-->>
 						</figure>
 					
 					<article class="product-box_data">
 						<h2> <%= datos.productos[i].nombreProducto %> </h2>
-						<p> <%= datos.productos[i].descripcion %> </p> 
+						<p class="descripcion"> <%= datos.productos[i].descripcion %> </p> 
 						
 						<% for (let j = 0; j < datos.comentarios.length; j++) { %> <!-- FOR DE COMENTARIOS-->>
 							<a href="/products/id/<%= datos.productos[i].id %>"> 
-								<h2> <%= datos.comentarios[j].usuario  %> </h2>
-								<p> <%=  datos.comentarios[j].texto  %> </p>
-								<img class="img" src="/images/<%= datos.comentarios[j].foto %>" 
+								<h3 class="usuario"> <%= datos.comentarios[j].usuario  %> </h3>
+								<p class="comment"> <%=  datos.comentarios[j].texto  %> </p>
+								<img class="img" src="/images/users/<%= datos.comentarios[j].foto %>" 
 								alt="foto"> 
 							<% } %>
 
