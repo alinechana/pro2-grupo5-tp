@@ -68,7 +68,7 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--yellow);
+  background-color: rgb(201, 201, 201);
 }
 
 .main-header_home-link,
@@ -494,7 +494,7 @@ textarea.form-input {
   }
 
   .banner {
-    height: 320px;
+    height: 290px;
   }
 
   .btn-toggle-navbar {

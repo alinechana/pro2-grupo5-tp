@@ -6,9 +6,9 @@ const productController = {
         let productoEncontrado = {};
 
         //este for va a lograr que cuando uno aprieta la foto del producto se rediriga a la foto indicada
-        for (let i = 0; i < datos.productos.length; i++) {
+        for (let i = 0; i < datos.productos.length; i++) { //por cada producto en datos
             const element = datos.productos[i];
-            if (element.id == productoBuscado) {
+            if (element.id == productoBuscado) { //si el id de ese producto es igual a el producto que busco, establecemos que ESE producto es el producto encontrado
                 productoEncontrado = element
             }
         }

@@ -24,7 +24,7 @@
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<% for (let i = 0; i < comentarios.length; i++) { %>
+						<% for (let i = 0; i < comentarios.length; i++) { %>  <!--Este for hará que se muestre cada comentario dentro de datos, con su foto, usuario y texto correspondiente-->
 							<article>
 								<img src="/images/users/<%= comentarios[i].foto %>" alt=""> <!-- dentro de comentarios esta la foto del usuario que comenta esto va a hacer que figure eso-->
 								<div class="data">
