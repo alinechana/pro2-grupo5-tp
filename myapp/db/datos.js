@@ -6,7 +6,7 @@ let datos = {
         contraseña: "123445566",
         fechaDeNacimiento: "12/05/2006", 
         documento: 47384229, 
-        fotoDePerfil: "", 
+        fotoDePerfil: "userDos.jpg", 
     }, 
 
     productos: [

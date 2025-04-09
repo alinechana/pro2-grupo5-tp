@@ -464,6 +464,11 @@ textarea.form-input {
   border-radius: 50%;
 }
 
+.imgProfile {
+  width: 75%;
+  border-radius: 100%;
+}
+
 .main-title{
   font-size: 25px;
   margin-bottom: 10px;
