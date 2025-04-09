@@ -21,7 +21,7 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 
-			<% for (let i = 0; i < datos.productos.length; i++) { %>   <!-- FOR DE PRODUCTOS-->>
+			<% for (let i = 0; i < datos.productos.length; i++) { %>   <!-- FOR DE PRODUCTOS: este for va a recorrer los productos que figuran en el index para mostrar los datos que se encuentran en la carpeta datos db-->>
 				<div class="col-12 col-sm-6 col-lg-3 divProd">
 					<section class="product-box">
 						<a href="/products/id/<%= datos.productos[i].id %>"> 
@@ -33,7 +33,7 @@
 						<h2> <%= datos.productos[i].nombreProducto %> </h2>
 						<p class="descripcion"> <%= datos.productos[i].descripcion %> </p> 
 						
-						<% for (let j = 0; j < datos.comentarios.length; j++) { %> <!-- FOR DE COMENTARIOS-->>
+						<% for (let j = 0; j < datos.comentarios.length; j++) { %> <!-- FOR DE COMENTARIOS: este for va a recorrer los comentarios de cada producto que estan dentro de la carpeta db de datos-->
 							<a href="/products/id/<%= datos.productos[i].id %>"> 
 								<h3 class="usuario"> <%= datos.comentarios[j].usuario  %> </h3>
 								<p class="comment"> <%=  datos.comentarios[j].texto  %> </p>
