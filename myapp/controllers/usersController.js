@@ -8,7 +8,7 @@ const usersController = {
       return res.render("login")
     },
     profile: function (req, res) {
-      return res.render("profile", {usuario: datos.usuario}) // defino que usuario = datos.usuario
+      return res.render("profile", {usuario: datos.usuario, productosProfile: datos.productos, comentarios: datos.comentarios}) // defino que usuario = datos.usuario
     }
 }
 
