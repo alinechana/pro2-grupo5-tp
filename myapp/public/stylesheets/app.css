@@ -511,6 +511,123 @@ textarea.form-input {
   font-size: 10px;
 }
 
+/*====== Register ======*/
+
+.formRegister{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 500px;
+  width: 600px;
+  justify-content: center;
+  justify-content: space-around;
+  border: grey;
+  border: solid;
+  border: 2%;
+  border-radius: 20px;
+  background-color: rgba(68, 68, 68, 0.275);
+}
+
+#register{
+  width: 60%;
+  height: 8%;
+  align-self: center;
+  border: grey;
+  border: solid;
+  border: 40px;
+  border-radius: 10px;
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.botonRegister{
+  background-color: rgba(109, 109, 109, 0.77);
+  align-self: center;
+  width: 200px;
+  height: 13%;
+  justify-content: space-around;
+  color: white;
+  border: solid;
+  border: 40px;
+  border-radius: 10px;
+  border-color: #000000;
+  font-family: "Jost", sans-serif;
+  font-style: normal;
+  font-size: 15px;
+}
+
+
+/*====== Login ======*/
+
+.formLogin{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 320px;
+  width: 600px;
+  justify-content: center;
+  justify-content: space-around;
+  border: solid;
+  border: 2%;
+  border-radius: 20px;
+  background-color: rgba(68, 68, 68, 0.275);
+}
+
+#login{
+  width: 60%;
+  height: 12%;
+  align-self: center;
+  border: grey;
+  border: solid;
+  border: 40px;
+  border-radius: 10px;
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.cajaRecordarme{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  width: 60%;
+  align-self: center;
+  justify-content: space-between;
+}
+
+.recordarmeTexto{
+  color: #000000;
+  font-size: 20px;
+  width: 40%;
+  font-family: "Jost", sans-serif;
+  font-style: normal;
+  font-size: 15px;
+  
+}
+
+.recordarmeCheck{
+  width: 54%;
+}
+
+.botonLogin{
+  background-color: rgba(109, 109, 109, 0.77);
+  align-self: center;
+  width: 200px;
+  height: 13%;
+  justify-content: space-around;
+  color: white;
+  border: solid;
+  border: 40px;
+  border-radius: 10px;
+  border-color: #000000;
+  font-family: "Jost", sans-serif;
+  font-style: normal;
+  font-size: 15px;
+}
+
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
   .main-header_credit-link {
@@ -567,4 +684,6 @@ textarea.form-input {
 .row{
   display: flex;
   justify-content: center;
+  justify-content: space-between;
 }
+

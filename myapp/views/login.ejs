@@ -18,15 +18,17 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			
-			<form action="/" method="get">
+			<form class="formLogin" action="/" method="get">
 				
-				<input type="email" name="email" value="" placeholder="email"> 
-				<input type="password" name="contraseña" value="" placeholder="contraseña"> 
-				<label> Recordarme </label>
-				<input type="checkbox" name="recordarme" value="">
+				<input id="login" type="email" name="email" value="" placeholder="Email"> 
+				<input id="login" type="password" name="contraseña" value="" placeholder="Contraseña">
 				
+				<article class="cajaRecordarme"> 
+				<label class="recordarmeTexto"> Recordarme </label>
+				<input class="recordarmeCheck" type="checkbox" name="Recordarme" value="">
+				</article>
 
-				<button type="submit">Ingresar</button>
+				<button class="botonLogin" type="submit">Ingresar</button>
 
 			</form>
 
