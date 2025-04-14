@@ -12,7 +12,7 @@
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-				<img class="imgProfile" src="/images/users/<%= usuario.fotoDePerfil%>" alt="cafetera moulinex">
+				<img class="imgProfile" src="/images/users/<%= usuario.fotoDePerfil%>" alt="">
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
@@ -42,7 +42,7 @@
 				<h2 class="products-title">Mis productos</h2>
 			</div>
 			<!-- Show mis productos -->
-			<% for (let i = 0; i < productosProfile.length; i++) { %>   <!-- FOR DE PRODUCTOS: -->>
+			<% for (let i = 0; i < productosProfile.length; i++) { %>   <!-- FOR DE PRODUCTOS: -->
 				<div class="col-12 col-sm-6 col-lg-3 divProd">
 					<section class="product-box">
 						<a href="/products/id/<%= productosProfile[i].id %>"> 
