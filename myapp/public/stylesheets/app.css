@@ -519,6 +519,26 @@ textarea.form-input {
   font-size: 15px;
 }
 
+.rowAdd{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+.seleccionar{
+  width: 60%;
+  height: 8%;
+  align-self: center;
+  border: grey;
+  border: solid;
+  border: 40px;
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
 /*====== Profile ======*/
 .info-usuario{
   border-bottom: 1px solid #ccc;
@@ -579,6 +599,15 @@ textarea.form-input {
   border: 2%;
   border-radius: 20px;
   background-color: rgba(68, 68, 68, 0.275);
+  justify-self: center;
+  align-self: center;
+}
+
+.rowRegister{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
 }
 
 #register{
@@ -640,6 +669,13 @@ textarea.form-input {
   font-style: normal;
 }
 
+.rowLogin{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .cajaRecordarme{
   display: flex;
   flex-wrap: wrap;
@@ -680,6 +716,8 @@ textarea.form-input {
   font-style: normal;
   font-size: 15px;
 }
+
+
 
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
