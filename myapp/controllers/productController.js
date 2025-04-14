@@ -20,6 +20,10 @@ const productController = {
         return res.render("product-add", {usuario: datos.usuario});
         
     },
+    buscar: function (req, res) {
+        return res.render("search-results", {datos});
+        
+    },
 
     }
 

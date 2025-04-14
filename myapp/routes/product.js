@@ -10,5 +10,6 @@ router.get("/id/:id", productController.detalle);
 router.get("/product-add", productController.agregar);
 
 // search 
+router.get("/search-results", productController.buscar);
 
 module.exports = router;
