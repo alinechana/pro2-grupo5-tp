@@ -307,6 +307,13 @@ hr {
   padding: 15px 0;
 }
 
+.rowFooter {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  justify-content: flex-start;
+}
+
 
 /*====== Product Detail ======*/
 .product-detail {
