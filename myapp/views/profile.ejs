@@ -54,13 +54,7 @@
 						<h2> <%= productosProfile[i].nombreProducto %> </h2>
 						<p class="descripcion"> <%= productosProfile[i].descripcion %> </p> 
 						
-						<% for (let j = 0; j < comentarios.length; j++) { %> <!-- FOR DE COMENTARIOS: -->
-							<a href="/products/id/<%= productosProfile[i].id %>"> 
-								<h3 class="usuario"> <%= comentarios[j].usuario  %> </h3>
-								<p class="comment"> <%=  comentarios[j].texto  %> </p>
-								<img class="img" src="/images/users/<%= comentarios[j].foto %>" 
-								alt="foto"> 
-							<% } %>
+					
 
 					</article>
 				</section>

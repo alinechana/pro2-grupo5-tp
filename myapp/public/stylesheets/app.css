@@ -187,6 +187,7 @@ hr {
   overflow: hidden;
   transition: 300ms;
   margin: 20px 0;
+  height: 400px;
 }
 
 .product-box a {
@@ -534,6 +535,7 @@ textarea.form-input {
   border: grey;
   border: solid;
   border: 40px;
+  border-radius: 10px;
   font-family: "Jost", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -776,5 +778,7 @@ textarea.form-input {
   display: flex;
   justify-content: center;
   justify-content: space-between;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 

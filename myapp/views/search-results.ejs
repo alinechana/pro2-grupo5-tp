@@ -30,13 +30,7 @@
 						<h2 class="productoNombre"> <%= datos.productos[i].nombreProducto %> </h2>
 						<p class="descripcion"> <%= datos.productos[i].descripcion %> </p> 
 						
-						<% for (let j = 0; j < datos.comentarios.length; j++) { %> <!-- FOR DE COMENTARIOS: este for va a recorrer los comentarios de cada producto que estan dentro de la carpeta db de datos-->
-							<a href="/products/id/<%= datos.productos[i].id %>"> 
-								<h3 class="usuario"> <%= datos.comentarios[j].usuario  %> </h3>
-								<p class="comment"> <%=  datos.comentarios[j].texto  %> </p>
-								<img class="img" src="/images/users/<%= datos.comentarios[j].foto %>" 
-								alt="foto"> 
-							<% } %>
+						
 
 					</article>
 				</section>
