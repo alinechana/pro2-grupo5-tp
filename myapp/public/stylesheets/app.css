@@ -111,6 +111,10 @@ hr {
 
 
 /*====== Main Navbar ======*/
+
+.logo{
+  border-radius: 85px;
+}
 .btn-toggle-navbar {
   background-color: var(--dark-blue);
   color: #ffffff;
