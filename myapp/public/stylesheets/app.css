@@ -444,6 +444,13 @@ hr {
   font-size: 1.7em;
 }
 
+.rowDetalle {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  justify-content: flex-start;
+}
+
 /*====== Formularios ======*/
 .form-label {
   display: inline-block;

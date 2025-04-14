@@ -124,7 +124,7 @@ let datos = {
         id: 10}, 
 
         {usuario: "cgarcia@udesa.edu.ar", 
-        texto: "",
+        texto: "Me encanta!!!",
         foto: "userCinco.jpg",
         id: 11
         }
