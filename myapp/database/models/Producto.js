@@ -1,0 +1,56 @@
+module.exports = function (sequelize, dataType){
+    let alias = "Producto";
+    let cols = {
+        id: {
+            autoIncrement: true, 
+            primaryKey: true, 
+            type: dataTypes.INTEGER
+    
+        }, 
+
+        foto: {
+            type: dataTypes.STRING
+
+        }, 
+
+        nombre: {
+            type: dataTypes.STRING
+
+        }, 
+
+        descripcion: {
+            type: dataTypes.STRING
+
+        }, 
+
+        created_at: {
+            type: dataTypes.DATE
+    
+        },
+    
+        updated_at:{
+            type: dataTypes.DATE
+    
+        },
+
+        deletedAt: {
+            type: dataTypes.DATE
+        }, 
+
+        usuarioId: {
+            type: dataTypes.INTEGER
+        }, 
+
+        
+
+    }
+
+    let config = {
+        tableName : "productos",
+        timestamps:true,
+        underscored: true,
+    }
+    
+    let Producto = sequelize.define(alias, cols, config);
+    return Producto;
+}

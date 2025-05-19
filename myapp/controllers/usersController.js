@@ -1,4 +1,6 @@
 const datos = require("../db/datos");
+const db = require(`../database/models`);
+
 const usersController = {
     register: function (req, res) {
         return res.render("register")
