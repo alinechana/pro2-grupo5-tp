@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require("express-session")
 
 var indexRouter = require('./routes/index'); //los prefijos de las rutas van aca
 var usersRouter = require('./routes/users');
@@ -21,10 +22,32 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//middleware de config de session
+app.use(session({
+  secret: "FindsYCreate_base", 
+  resave: false, 
+  saveUninitialized: true}));
+
+//middleware de poner session en locals
+app.use(function (req, res, next) {
+  if (req.session.user != undefined) {
+    res.locals.user = req.session.user;
+  }
+  return next()
+  });
+
+//middleware de poner cookie en locals y en session
+app.use(function (req, res, next) {
+  if (req.cookies.user != undefined && req.session.user == undefined) {
+    res.locals.user = req.cookies.user;
+    req.session.user = req.cookies.user;
+  }
+  return next()
+})
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/products", productRouter);
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
