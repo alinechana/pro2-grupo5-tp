@@ -32,17 +32,17 @@ const usersController = {
       })
 
     let contrasenia = req.body.contraseña
-    if (contrasenia.length < 3 || constrasenia == " ") {
+    if (contrasenia.length < 3 || contrasenia == " ") {
       return res.send("La contraseña debe ser mayor a 3 caracteres")
 
     } else {
       let passEncriptada = bcrypt.hashSync(contrasenia, 10);
 
       db.Usuario.create({
-        usuario: req.body.name,
         email: req.body.email,
         contrasenia: passEncriptada,
-        fecha: req.body.fecha
+        fecha: req.body.fecha,
+        dni: req.body.dni
       })
         .then(function (user) {
           return res.redirect("/")
@@ -71,21 +71,22 @@ const usersController = {
     //validar que el email y la password sean correctas
     db.Usuario.findOne({
       where: [{ email: req.body.email }]
-    }).then(function (resultado) {
-      let email = resultado.email
-      let password = resultado.password
-
-      if (email != undefined && bcrypt.compareSync(userInfo.contrasenia, password)) {
-        //poner en session
-        req.session.user = resultado;
-      }
-      //check de recordarme
-      if (userInfo.recordarme != undefined) {
-        res.cookie("user", userInfo, { maxAge: 600000 })
-      }
-
-      res.redirect("/")
     })
+      .then(function (resultado) {
+        let email = resultado.email
+        let password = resultado.password
+
+        if (email != undefined && bcrypt.compareSync(userInfo.contrasenia, password)) {
+          //poner en session
+          req.session.user = resultado;
+        }
+        //check de recordarme
+        if (userInfo.recordarme != undefined) {
+          res.cookie("user", userInfo, { maxAge: 600000 })
+        }
+
+        res.redirect("/")
+      })
       .catch(function (err) {
         return res.send(err)
       })
