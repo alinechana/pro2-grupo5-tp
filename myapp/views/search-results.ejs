@@ -37,6 +37,23 @@
 				</div>
 			<% } %>
 
+			<h2>Resultados de la búsqueda</h2>
+			
+			<% if (mensaje) { %>  <!--si no se encontraron productos, entonces se muestra el mensaje -->
+				<p><%= mensaje %></p>
+				<% } else { %>
+					<ul> 
+						<% for (let i = 0; i < productos.length; i++) { %> <!--este for reccorre los productos que matchearon con la busqueda -->
+							<li>
+							  <a href="/products/id/<%= productos[i].id %>"><%= productos[i].nombre %></a> <!--lleva al detalle del producto -->
+							  <p> Subido por: <a href="/profile/id/<%= productos[i].usuarios.id %>"><%= productos[i].usuarios.email %></a></p>
+							  <!-- ESTA RUTA NO EXISTE lleva al usuario que publico ese producto, a traves de la relacion "ususarios" -->
+							</li>
+							<% } %>
+						  </ul>
+						<% } %>
+
+
 	<!-- footer -->
 	<%- include('./partials/footer') %>
 	<!-- /footer -->
