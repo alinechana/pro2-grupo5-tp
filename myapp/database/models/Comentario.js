@@ -50,7 +50,7 @@ module.exports = function (sequelize, dataTypes){
             as: "usuarios", 
 
             foreignKey: "usuarios_id"
-        })
+        }) // asocio el comentario con el usuario ya que un comentario pertenece a un usuario
     }
 
     return Comentario;

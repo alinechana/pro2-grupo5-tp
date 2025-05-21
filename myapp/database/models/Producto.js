@@ -59,7 +59,7 @@ module.exports = function (sequelize, dataTypes){
             as: "usuarios", 
 
             foreignKey: "usuarios_id"
-        })
+        }) // asocio el producto con el usuario ya que un producto pertenece a un usuario
     }
     
     return Producto; 
