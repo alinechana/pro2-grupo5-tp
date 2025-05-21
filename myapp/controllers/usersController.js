@@ -100,6 +100,14 @@ const usersController = {
     return res.redirect("/")
   },
   profile: function (req, res) {
+
+    Usuario.findAll({
+      include: [{
+        association: "usuarios", 
+        association: "productos"
+      }]
+    })
+    
     return res.render("profile", { usuario: datos.usuario, productosProfile: datos.productos, comentarios: datos.comentarios }) // defino que usuario = datos.usuario
   }
 }

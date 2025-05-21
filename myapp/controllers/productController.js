@@ -5,6 +5,17 @@ const op = db.Sequelize.Op;
 
 const productController = {
     detalle: function (req, res) {
+
+        Producto.findAll({
+            include: [
+                {
+                    association: "usuarios", 
+                    association: "comentarios"
+                }
+            ]
+        }
+        )
+
         let productoBuscado = req.params.id;
         let productoEncontrado = {};
 
