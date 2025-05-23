@@ -416,3 +416,14 @@ null,
 1,
 10
 );
+
+UPDATE productos SET foto = 'productoUno.png' WHERE nombre = 'Sudadera Oversize Cremallera';
+UPDATE productos SET foto = 'productoDos.png' WHERE nombre = 'Jeans ZW Collection Relaxed tiro medio';
+UPDATE productos SET foto = 'productoTres.png' WHERE nombre = 'Mono Corto Denim TRF Fluido';
+UPDATE productos SET foto = 'productoCuatro.png' WHERE nombre = 'Jersey Rústico';
+UPDATE productos SET foto = 'productoCinco.png' WHERE nombre = 'Trench Corto Efecto Piel';
+UPDATE productos SET foto = 'productoSeis.png' WHERE nombre = 'Top Halter Satinado ZW Collection';
+UPDATE productos SET foto = 'productoSiete.png' WHERE nombre = 'Jeans Z1975 Culotte tiro alto Botones';
+UPDATE productos SET foto = 'productoOcho.png' WHERE nombre = 'Blazer Oversize';
+UPDATE productos SET foto = 'productoNueve.png' WHERE nombre = 'Sudadera Capucha Bolsillos';
+UPDATE productos SET foto = 'productoDiez.png' WHERE nombre = 'Camiseta Interlock Lavada';

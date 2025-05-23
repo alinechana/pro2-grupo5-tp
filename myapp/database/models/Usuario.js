@@ -55,16 +55,13 @@ let Usuario = sequelize.define(alias, cols, config);
 Usuario.associate = function (models) {
     Usuario.hasMany(models.Comentario, {
         as: "comentarios", 
-
-        foreignKey: "comentarios_id"
-    }) }; // asocio el usuario con los comentarios ya que un usuario puede comentar muchas veces 
-
- Usuario.associate = function (models) {
-        Usuario.hasMany(models.Producto, {
-            as: "productos", 
-    
-            foreignKey: "productos_id"
-        }) };     //asocio el usuario con los productos ya que un usuario puede tener muchos productos
+        foreignKey: "usuarioId"
+    }); // asocio el usuario con los comentarios ya que un usuario puede comentar muchas veces 
+    Usuario.hasMany(models.Producto, {
+        as: "productos", 
+        foreignKey: "usuarioId"
+    }) //asocio el usuario con los productos ya que un usuario puede tener muchos productos
+}; 
 
 
     return Usuario; 

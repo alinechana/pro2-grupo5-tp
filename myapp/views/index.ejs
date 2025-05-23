@@ -21,17 +21,17 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 
-			<% for (let i = 0; i < datos.productos.length; i++) { %>   <!-- FOR DE PRODUCTOS: este for va a recorrer los productos que figuran en el index para mostrar los datos que se encuentran en la carpeta datos db-->
+			<% for (let i = 0; i < datos.length; i++) { %>   <!-- FOR DE PRODUCTOS: este for va a recorrer los productos que figuran en el index para mostrar los datos que se encuentran en la carpeta datos db-->
 				<div class="col-12 col-sm-6 col-lg-3 divProd">
 					<section class="product-box">
-						<a href="/products/id/<%= datos.productos[i].id %>"> 
+						<a href="/products/id/<%= datos[i].id %>"> 
 						<figure class="product-box_image">
-							<img src="/images/products/<%= datos.productos[i].fotoProducto%>" alt="cafetera moulinex"> <!-- IMG PRODUCTO QUE FALTA-->
+							<img src="/images/products/<%= datos[i].foto%>" alt=""> <!-- IMG PRODUCTO QUE FALTA-->
 						</figure>
 					
 					<article class="product-box_data">
-						<h2 class="productoNombre"> <%= datos.productos[i].nombreProducto %> </h2>
-						<p class="descripcion"> <%= datos.productos[i].descripcion %> </p> 
+						<h2 class="productoNombre"> <%= datos[i].nombre %> </h2>
+						<p class="descripcion"> <%= datos[i].descripcion %> </p> 
 					</article>
 				</section>
 				</div>
