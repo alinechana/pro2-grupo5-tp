@@ -12,12 +12,12 @@ module.exports = function (sequelize, dataTypes){
             type: dataTypes.TEXT
         }, 
 
-        created_at: {
+        createdAt: {
             type: dataTypes.DATE
     
         },
     
-        updated_at:{
+        updatedAt:{
             type: dataTypes.DATE
     
         },
@@ -39,7 +39,7 @@ module.exports = function (sequelize, dataTypes){
     let config = {
         tableName : "comentarios",
         timestamps:true,
-        underscored: true,
+        underscored: false,
     }
     
     let Comentario = sequelize.define(alias, cols, config);

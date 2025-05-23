@@ -23,12 +23,12 @@ module.exports = function (sequelize, dataTypes){
 
         }, 
 
-        created_at: {
+        createdAt: {
             type: dataTypes.DATE
     
         },
     
-        updated_at:{
+        updatedAt:{
             type: dataTypes.DATE
     
         },
@@ -48,7 +48,7 @@ module.exports = function (sequelize, dataTypes){
     let config = {
         tableName : "productos",
         timestamps:true,
-        underscored: true,
+        underscored: false,
     }
     
     let Producto = sequelize.define(alias, cols, config);

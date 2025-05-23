@@ -27,12 +27,12 @@ let cols = {
         type: dataTypes.INTEGER
     }, 
 
-    created_at: {
+    createdAt: {
         type: dataTypes.DATE
 
     },
 
-    updated_at:{
+    updatedAt:{
         type: dataTypes.DATE
 
     },
@@ -46,7 +46,7 @@ let cols = {
 let config = {
     tableName : "usuarios",
     timestamps:true,
-    underscored: true,
+    underscored: false,
 }
 
 let Usuario = sequelize.define(alias, cols, config);

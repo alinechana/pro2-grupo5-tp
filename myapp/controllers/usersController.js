@@ -84,14 +84,14 @@ const usersController = {
     })
       .then(function (resultado) {
         let email = resultado.email
-        let password = resultado.password
+        let password = resultado.contrasenia
 
-        if (resultado != undefined) { //si no existe ese mail, mustra mensaje
+        if (resultado == undefined) { //si no existe ese mail, mustra mensaje
           return res.send ("El email no está registrado")
           
         }
 
-        if (bcrypt.compareSync(userInfo.contrasenia, resultado.contrasenia)) {
+        if (bcrypt.compareSync(userInfo.contrasenia, password)) {
           //poner en session
           req.session.user = resultado;
         
