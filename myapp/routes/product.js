@@ -9,6 +9,8 @@ router.get("/id/:id", productController.detalle);
 //agregar
 router.get("/product-add", productController.agregar);
 
+//me falta la ruta de agregar nueva 
+
 // search 
 router.get("/search-results", productController.buscar);
 

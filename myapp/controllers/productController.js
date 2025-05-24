@@ -33,7 +33,23 @@ const productController = {
       },
     
     agregar: function (req, res) {
-        return res.render("product-add", {usuario: datos.usuario});
+        //falta si no esta logueado que pasa 
+
+        Producto.create({
+            imagen: req.body.imagen, 
+            nombre: req.body.producto, 
+            descripcion: req.body.descripcion, 
+        })
+        .then(function () {
+            return res.redirect('/product-add',{usuario: datos.usuario}) ;
+          })
+          .catch(function (error) {
+            return res.send("Error al agregar el producto " + error)
+  
+          });
+
+
+        //return res.render("product-add", {usuario: datos.usuario});
         
     },
     
