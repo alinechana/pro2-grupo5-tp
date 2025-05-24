@@ -1,6 +1,7 @@
 const datos = require("../db/datos");
 const db = require(`../database/models`);
 const Producto = db.Producto; 
+const Comentario = db.Comentario;
 
 const productController = {
     detalle: function (req, res) {
@@ -55,6 +56,26 @@ const productController = {
             
         });
         
+    },
+
+    comentar: function (req, res) {
+        // falta si no esta logueado 
+
+        Comentario.create({
+            texto: req.body.texto, //lo busca en el forms
+            usuarioId: req.session.user.id, //id del usuario que comentó
+            productoId: req.params.id, //id del producto del comentario
+        })
+        .then(function () {
+            return res.redirect('/products/id/' + req.params.id);
+          })
+          .catch(function (error) {
+            return res.send("Error al crear el comentario: " + error)
+  
+          });
+
+
+
     }
 
     }

@@ -12,4 +12,7 @@ router.get("/product-add", productController.agregar);
 // search 
 router.get("/search-results", productController.buscar);
 
+//comentar 
+router.post('/comentario/:id', productController.comentar);
+
 module.exports = router;
