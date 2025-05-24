@@ -4,30 +4,31 @@ const Producto = db.Producto;
 const Comentario = db.Comentario;
 
 const productController = {
+    
     detalle: function (req, res) {
 
-        Producto.findAll({
+        let productoBuscado = req.params.id; //busca id del navegador
+
+        Producto.findByPk(productoBuscado, {
             include: [
                 {
-                    association: "usuarios", 
-                    association: "comentarios"
-                }
+                    association: "comentarios", //trae los comentarios del prducto
+                    include: [{ association: "usuarios" }] // dentro de cada comentario, trae el usuario que lo hizo 
+                },
+                { association: "usuarios" } // trae el usuario que publico el producto
             ]
-        }
-        )
-
-        let productoBuscado = req.params.id;
-        let productoEncontrado = {};
-
-        //este for va a lograr que cuando uno aprieta la foto del producto se rediriga a la foto indicada
-        for (let i = 0; i < datos.productos.length; i++) { //por cada producto en datos
-            const element = datos.productos[i];
-            if (element.id == productoBuscado) { //si el id de ese producto es igual a el producto que busco, establecemos que ESE producto es el producto encontrado
-                productoEncontrado = element
-            }
-        }
-
-        return res.render("product", {detalle: productoEncontrado, comentarios: datos.comentarios }); //va a devolver el producto que encontro y los comentarios que corresponden
+        
+        })
+        .then(function (productoEncontrado) {
+    
+            return res.render("product", {
+                detalle: productoEncontrado,
+                comentarios: productoEncontrado.comentarios
+            });
+        })
+        .catch(function (error) {
+            return res.send("Error al buscar producto: " + error);
+        });
         
       },
     
