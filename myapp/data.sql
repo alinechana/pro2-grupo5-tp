@@ -73,7 +73,7 @@ FOREIGN KEY (usuarioId) REFERENCES usuarios(id)
 
 INSERT INTO productos VALUES 
 (DEFAULT, 
-"foto.png",
+"productoUno.png",
 "Sudadera Oversize Cremallera",
 "Sudadera con capucha confeccionada en hilatura con algodón. Manga larga acabada en puño. Cierre frontal con cremallera metálica.",
 DEFAULT, 
@@ -82,7 +82,7 @@ null,
 2
 ),
 (DEFAULT, 
-"foto.png",
+"productoDos.png",
 "Jeans ZW Collection Relaxed tiro medio",
 "Jeans de tiro medio y cintura con trabillas ajustable con cordones a contraste. Cinco bolsillos. Efecto lavado. Cierre frontal con cremallera y botón.",
 DEFAULT, 
@@ -91,7 +91,7 @@ null,
 4
 ),
 (DEFAULT, 
-"foto.png",
+"productoTres.png",
 "Mono Corto Denim TRF Fluido",
 "Mono confeccionado en tejido fluido de cuello solapa Manga larga con hombro caído acabada en puño con pliegues. Bolsillo de plastrón en el pecho. Cierre frontal con botones.",
 DEFAULT, 
@@ -100,7 +100,7 @@ null,
 1
 ),
 (DEFAULT, 
-"foto.png",
+"productoCuatro.png",
 "Jersey Rústico",
 "Jersey confeccionado en hilatura con algodón. Cuello barco y manga larga.",
 DEFAULT, 
@@ -109,7 +109,7 @@ null,
 3
 ),
 (DEFAULT, 
-"foto.png",
+"productoCinco.png",
 "Trench Corto Efecto Piel",
 "Trench corto de cuello solapa y manga larga acabada en puño con trabilla.",
 DEFAULT, 
@@ -118,7 +118,7 @@ null,
 5
 ),
 (DEFAULT, 
-"foto.png",
+"productoSeis.png",
 "Top Halter Satinado ZW Collection",
 "Top halter confeccionado en tejido satinado. Espalda descubierta. Bajo asimétrico. Cierre en cuello con botones.",
 DEFAULT, 
@@ -127,7 +127,7 @@ null,
 2
 ),
 (DEFAULT, 
-"foto.png",
+"productoSiete.png",
 "Jeans Z1975 Culotte tiro alto Botones",
 "Jeans de tiro alto con bolsillos de plastrón en delantero y espalda. Pernera ancha y corta. Cierre frontal con botones.",
 DEFAULT, 
@@ -136,7 +136,7 @@ null,
 4
 ),
 (DEFAULT, 
-"foto.png",
+"productoOcho.png",
 "Blazer Oversize",
 "Blazer oversize de cuello solapa y manga larga con hombreras. Bolsillos de doble vivo en delantero. Bajo con aberturas en espalda. Cierre frontal cruzado con botones.",
 DEFAULT, 
@@ -145,7 +145,7 @@ null,
 3
 ),
 (DEFAULT, 
-"foto.png",
+"productoNueve.png",
 "Sudadera Capucha Bolsillos",
 "Sudadera con capucha confeccionada en hilatura con mezcla de algodón. Manga larga. Bolsillos laterales ocultos en costura.",
 DEFAULT, 
@@ -154,7 +154,7 @@ null,
 5
 ),
 (DEFAULT, 
-"foto.png",
+"productoDiez.png",
 "Camiseta Interlock Lavada",
 "Camiseta confeccionada en hilatura con mezcla de algodón. Cuello redondo y manga corta caída.",
 DEFAULT, 
@@ -416,14 +416,3 @@ null,
 1,
 10
 );
-
-UPDATE productos SET foto = 'productoUno.png' WHERE nombre = 'Sudadera Oversize Cremallera';
-UPDATE productos SET foto = 'productoDos.png' WHERE nombre = 'Jeans ZW Collection Relaxed tiro medio';
-UPDATE productos SET foto = 'productoTres.png' WHERE nombre = 'Mono Corto Denim TRF Fluido';
-UPDATE productos SET foto = 'productoCuatro.png' WHERE nombre = 'Jersey Rústico';
-UPDATE productos SET foto = 'productoCinco.png' WHERE nombre = 'Trench Corto Efecto Piel';
-UPDATE productos SET foto = 'productoSeis.png' WHERE nombre = 'Top Halter Satinado ZW Collection';
-UPDATE productos SET foto = 'productoSiete.png' WHERE nombre = 'Jeans Z1975 Culotte tiro alto Botones';
-UPDATE productos SET foto = 'productoOcho.png' WHERE nombre = 'Blazer Oversize';
-UPDATE productos SET foto = 'productoNueve.png' WHERE nombre = 'Sudadera Capucha Bolsillos';
-UPDATE productos SET foto = 'productoDiez.png' WHERE nombre = 'Camiseta Interlock Lavada';
