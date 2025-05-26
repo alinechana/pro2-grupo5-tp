@@ -51,16 +51,13 @@ const productController = {
                 nombre: req.body.producto, 
                 descripcion: req.body.descripcion, 
             })
-            .then(function () {
-                return res.redirect('/product-add',{usuario: datos.usuario}) ;
+            .then(function (resultado) {
+                return res.redirect('/product-add') ;
               })
               .catch(function (error) {
                 return res.send("Error al agregar el producto " + error)
       
               });
-            
-    
-    
         }, 
 
     buscar: function (req, res) {
