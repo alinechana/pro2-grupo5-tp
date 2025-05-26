@@ -21,10 +21,8 @@
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-
-			<h2>Resultados de la búsqueda</h2>
 			
-			<% if (locals.user != undefined) { %>  
+			<% if (productos.length > 0) { %>  
 				<ul> 
 					<% for (let i = 0; i < productos.length; i++) { %>   <!-- FOR DE PRODUCTOS: este for va a recorrer los productos que figuran en el index para mostrar los datos que se encuentran en la carpeta datos db-->
 						<div class="col-12 col-sm-6 col-lg-3 divProd">
@@ -37,7 +35,7 @@
 							<article class="product-box_data">
 								<h2 class="productoNombre"> <%= productos[i].nombre %> </h2>
 								<p class="descripcion"> <%= productos[i].descripcion %> </p> 
-								<p> Subido por: <a href="/users/profile/id/<%= productos[i].usuariosId %>"><%= productos[i].usuariosId.email %>/p>
+								<p> Subido por: <a href="/users/profile/id/<%= productos[i].usuariosId %>"><%= productos[i].usuariosId.email %>/p> <!-- ESTO ESTÁ MAL!!!!!-->
 							</article>
 						</section>
 						</div>

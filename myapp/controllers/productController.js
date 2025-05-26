@@ -1,5 +1,5 @@
 const datos = require("../db/datos");
-const db = require(`../database/models`);
+const db = require(⁠ ../database/models ⁠);
 const Producto = db.Producto; 
 const Comentario = db.Comentario;
 const Op = db.Sequelize.Op; 
@@ -40,7 +40,7 @@ const productController = {
         } else {
             return res.render("login") //lo que hace es que si no esta logueado lo manda a logearse
       
-          }
+        }
 
     }, 
     
@@ -75,10 +75,11 @@ const productController = {
         })
 
         .then(function (resultados) {
-            if (resultados === undefined) { //si no hay resultados, 
-                return res.render("search-results", {resultados}) //se muestra la vista con el mensaje 
-            }
-            res.render("search-results", { productos: resultados }); //si hay resultados, se muestran los productos
+        //return res.send(resultados)
+           return res.render("search-results", {productos: resultados}) 
+        })
+        .catch(function (error) {
+            return res.send(error)
             
         });
         
@@ -106,4 +107,4 @@ const productController = {
 
     }
 
-module.exports = productController; 
+module.exports = productController;
