@@ -2,6 +2,7 @@ const datos = require("../db/datos");
 const db = require(`../database/models`);
 const bcrypt = require("bcryptjs");
 const Usuario = db.Usuario; 
+const Producto = db.Producto;
 
 
 const usersController = {
@@ -119,14 +120,23 @@ const usersController = {
   },
 
   profile: function (req, res) {
+    
+    let usuarioLogueado = req.session.user;
 
-    Usuario.findAll({
-      include: [
-        {association: "usuarios"}, 
-        {association: "productos"}]
+    Producto.findAll({
+      where: {usuarioId: usuarioLogueado.id}
     })
     
-    return res.render("profile", { usuario: datos.usuario, productosProfile: datos.productos, comentarios: datos.comentarios }) // defino que usuario = datos.usuario
+    .then(function (resultado) {
+      //return res.send(resultado)
+      res.render("profile", {usuario: usuarioLogueado,
+        productos: resultado,
+        totalProductos: resultado.length})
+      
+    })
+    .catch(function (error) {
+      res.send(error)
+    })
   }
 }
 
