@@ -21,6 +21,7 @@ const productController = {
         
         })
         .then(function (productoEncontrado) {
+        return res.send(productoEncontrado)
     
             return res.render("product", {
                 detalle: productoEncontrado,
