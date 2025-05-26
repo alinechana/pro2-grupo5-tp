@@ -8,7 +8,7 @@ const indexController = {
     index: function (req, res) {
       Producto.findAll({
         include: [
-            {association: "usuarios"},
+            {association: "usuario"},
         ]
     })
 

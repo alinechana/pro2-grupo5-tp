@@ -13,10 +13,10 @@ const productController = {
         Producto.findByPk(productoBuscado, {
             include: [
                 {
-                    association: "usuarios", //trae los comentarios del prducto
-                    include: [{ association: "usuarios" }] // dentro de cada comentario, trae el usuario que lo hizo 
+                    association: "comentarios", //trae los comentarios del prducto
+                    include: [{ association: "usuario" }] // dentro de cada comentario, trae el usuario que lo hizo 
                 },
-                { association: "usuarios" } // trae el usuario que publico el producto
+                { association: "usuario" } // trae el usuario que publico el producto
             ]
         
         })
@@ -25,7 +25,7 @@ const productController = {
     
             return res.render("product", {
                 detalle: productoEncontrado,
-                comentarios: productoEncontrado.usuarios
+                comentarios: productoEncontrado.comentarios,
             });
         })
         .catch(function (error) {
@@ -71,7 +71,7 @@ const productController = {
         Producto.findAll({
             where:{ nombre: {[Op.like]: '%' + busqueda + '%' }}, //buscar producto que coincida con la busqueda
             include: [{
-                association: "usuarios" //trae datos del usuario para ver quien publico cada producto buscado
+                association: "usuario" //trae datos del usuario para ver quien publico cada producto buscado
             }]
         })
 

@@ -26,6 +26,10 @@ let cols = {
     dni: {
         type: dataTypes.INTEGER
     }, 
+    foto: {
+        type: dataTypes.STRING
+
+    }, 
 
     createdAt: {
         type: dataTypes.DATE
