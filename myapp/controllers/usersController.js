@@ -35,7 +35,7 @@ const usersController = {
           return res.send("Tu mail ya esta registrado")
         } 
 
-        if (contrasenia.length < 3 || contrasenia == " ") { //si la contra no cumple
+        if (contrasenia.length <= 3 || contrasenia == " ") { //si la contra no cumple
           return res.send("La contraseña debe ser mayor a 3 caracteres")
         } //devuelve ese mensaje
   

@@ -33,14 +33,14 @@ const productController = {
         
       },
 
-      agregar: function (req, res) {  // --> esta es ruta GET
+    agregar: function (req, res) {  // --> esta es ruta GET
         if (req.session.user != undefined) {  
             return res.redirect("/products/product-add") //si esta logueado lo manda a product add
       
-          } else {
+        } else {
             return res.render("login") //lo que hace es que si no esta logueado lo manda a logearse
       
-          }
+        }
 
     }, 
     
