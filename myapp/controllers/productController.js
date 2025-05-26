@@ -40,7 +40,7 @@ const productController = {
         } else {
             return res.render("login") //lo que hace es que si no esta logueado lo manda a logearse
       
-        }
+          }
 
     }, 
     
@@ -51,13 +51,16 @@ const productController = {
                 nombre: req.body.producto, 
                 descripcion: req.body.descripcion, 
             })
-            .then(function (resultado) {
-                return res.redirect('/product-add') ;
+            .then(function () {
+                return res.redirect('/product-add',{usuario: datos.usuario}) ;
               })
               .catch(function (error) {
                 return res.send("Error al agregar el producto " + error)
       
               });
+            
+    
+    
         }, 
 
     buscar: function (req, res) {
