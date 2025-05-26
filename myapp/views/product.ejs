@@ -41,13 +41,14 @@
 						<% } %>
 
 					</section>
-					
-
+					<% if (locals.user != undefined) { %>
 
 					<form class="form" action="/products/comentario/<%= detalle.id %>" method="POST">
 						<input class="form-input" name= "texto" type="text" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
+
+					<% } %>
 					<hr>
 				</div>
 			</div>
