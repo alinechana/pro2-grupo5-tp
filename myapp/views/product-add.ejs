@@ -17,15 +17,22 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form class="formAdd" action="/" method="get">
+
+
+			<% if (locals.user =! undefined) { %>
+
+				<form class="formAdd" action="/" method="get">
 				
-				<input type="file" name="imagen" class="seleccionar" value="" > 
-				<input type="text" name="producto" id="add" value="" placeholder="Nombre"> 
-				<input type="text" name="descripcion" id="add" value="" placeholder="Descripcion"> 
-
-				<button class="botonAdd" type="submit">Cargar</button>
-
-			</form>
+					<input type="file" name="imagen" class="seleccionar" value="" > 
+					<input type="text" name="producto" id="add" value="" placeholder="Nombre"> 
+					<input type="text" name="descripcion" id="add" value="" placeholder="Descripcion"> 
+	
+					<button class="botonAdd" type="submit">Cargar</button>
+	
+				</form>
+				
+			<% } %>
+			
 
 
 	<!-- footer -->

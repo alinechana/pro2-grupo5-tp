@@ -6,10 +6,11 @@ const datos = require("../db/datos")
 // detalle 
 router.get("/id/:id", productController.detalle);
 
-//agregar
+//agregar productos add
 router.get("/product-add", productController.agregar);
 
-//me falta la ruta de agregar nueva 
+router.post("/product-add", productController.agregarPost);
+
 
 // search 
 router.get("/search-results", productController.buscar);

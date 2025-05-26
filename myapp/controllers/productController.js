@@ -31,28 +31,37 @@ const productController = {
         });
         
       },
+
+      agregar: function (req, res) {  // --> esta es ruta GET
+        if (req.session.user != undefined) {  
+            return res.redirect("/products/product-add") //si esta logueado lo manda a product add
+      
+          } else {
+            return res.render("login") //lo que hace es que si no esta logueado lo manda a logearse
+      
+          }
+
+    }, 
     
-    agregar: function (req, res) {
-        //falta si no esta logueado que pasa 
+    agregarPost: function (req, res) { // procesa los datos, los agarra del formulario y realiza las acciones correspondientes 
 
-        Producto.create({
-            imagen: req.body.imagen, 
-            nombre: req.body.producto, 
-            descripcion: req.body.descripcion, 
-        })
-        .then(function () {
-            return res.redirect('/product-add',{usuario: datos.usuario}) ;
-          })
-          .catch(function (error) {
-            return res.send("Error al agregar el producto " + error)
-  
-          });
-
-
-        //return res.render("product-add", {usuario: datos.usuario});
-        
-    },
+            Producto.create({
+                imagen: req.body.imagen, 
+                nombre: req.body.producto, 
+                descripcion: req.body.descripcion, 
+            })
+            .then(function () {
+                return res.redirect('/product-add',{usuario: datos.usuario}) ;
+              })
+              .catch(function (error) {
+                return res.send("Error al agregar el producto " + error)
+      
+              });
+            
     
+    
+        }, 
+
     buscar: function (req, res) {
         let busqueda = req.query.name; //busca el query del forms
 
