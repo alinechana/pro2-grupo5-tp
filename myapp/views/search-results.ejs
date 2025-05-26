@@ -7,7 +7,11 @@
 
 <body>
 	<!-- Header -->
-	<%- include('./partials/header') %>
+	<% if (locals.user != undefined) { %>
+		<%- include('./partials/headerLogueado') %>
+	<% } else { %>
+		<%- include('./partials/header') %>
+	<% } %>
 	<!-- /Header -->
 
 	<!-- Novedades -->
@@ -18,42 +22,34 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 
-			<% for (let i = 0; i < datos.productos.length; i++) { %>   <!-- FOR DE PRODUCTOS: este for va a recorrer los productos que figuran en el index para mostrar los datos que se encuentran en la carpeta datos db-->
-				<div class="col-12 col-sm-6 col-lg-3 divProd">
-					<section class="product-box">
-						<a href="/products/id/<%= datos.productos[i].id %>"> 
-						<figure class="product-box_image">
-							<img src="/images/products/<%= datos.productos[i].fotoProducto%>" alt="cafetera moulinex"> <!-- IMG PRODUCTO QUE FALTA-->
-						</figure>
-					
-					<article class="product-box_data">
-						<h2 class="productoNombre"> <%= datos.productos[i].nombreProducto %> </h2>
-						<p class="descripcion"> <%= datos.productos[i].descripcion %> </p> 
-						
-						
-
-					</article>
-				</section>
-				</div>
-			<% } %>
-
 			<h2>Resultados de la búsqueda</h2>
 			
-			<% if (mensaje) { %>  <!--si no se encontraron productos, entonces se muestra el mensaje -->
-				<p><%= mensaje %></p>
-				<% } else { %>
-					<ul> 
-						<% for (let i = 0; i < productos.length; i++) { %> <!--este for reccorre los productos que matchearon con la busqueda -->
-							<li>
-							  <a href="/products/id/<%= productos[i].id %>"><%= productos[i].nombre %></a> <!--lleva al detalle del producto -->
-							  <p> Subido por: <a href="/profile/id/<%= productos[i].usuarios.id %>"><%= productos[i].usuarios.email %></a></p>
-							  <!-- ESTA RUTA NO EXISTE lleva al usuario que publico ese producto, a traves de la relacion "ususarios" -->
-							</li>
-							<% } %>
-						  </ul>
-						<% } %>
+			<% if (locals.user != undefined) { %>  
+				<ul> 
+					<% for (let i = 0; i < productos.length; i++) { %>   <!-- FOR DE PRODUCTOS: este for va a recorrer los productos que figuran en el index para mostrar los datos que se encuentran en la carpeta datos db-->
+						<div class="col-12 col-sm-6 col-lg-3 divProd">
+							<section class="product-box">
+								<a href="/products/id/<%= productos[i].id %>"> 
+								<figure class="product-box_image">
+									<img src="/images/products/<%= productos[i].foto%>" alt="cafetera moulinex"> <!-- IMG PRODUCTO QUE FALTA-->
+								</figure>
+							
+							<article class="product-box_data">
+								<h2 class="productoNombre"> <%= productos[i].nombre %> </h2>
+								<p class="descripcion"> <%= productos[i].descripcion %> </p> 
+								<p> Subido por: <a href="/users/profile/id/<%= productos[i].usuariosId %>"><%= productos[i].usuariosId.email %>/p>
+							</article>
+						</section>
+						</div>
+					<% } %>
 
+				</ul>
+				<% } else { %> <!--si no se encontraron productos, entonces se muestra el mensaje -->
+						<p> No hay resultados para la búsqueda </p>
+					<% } %>
 
+						
+			
 	<!-- footer -->
 	<%- include('./partials/footer') %>
 	<!-- /footer -->

@@ -54,7 +54,7 @@ let Usuario = sequelize.define(alias, cols, config);
 
 Usuario.associate = function (models) {
     Usuario.hasMany(models.Comentario, {
-        as: "comentarios", 
+        as: "usuarios", 
         foreignKey: "usuarioId"
     }); // asocio el usuario con los comentarios ya que un usuario puede comentar muchas veces 
     Usuario.hasMany(models.Producto, {

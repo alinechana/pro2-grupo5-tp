@@ -7,7 +7,11 @@
 
 <body>
 	<!-- Header -->
-	<%- include('./partials/headerLogueado') %>
+	<% if (locals.user != undefined) { %>
+		<%- include('./partials/headerLogueado') %>
+	<% } else { %>
+		<%- include('./partials/header') %>
+	<% } %>
 	<!-- /Header -->
 
 	<!-- Novedades -->
@@ -19,7 +23,7 @@
 			<!-- Show the "ultimos" products -->
 
 
-			<% if (locals.user =! undefined) { %>
+			<% if (locals.user != undefined) { %>
 
 				<form class="formAdd" action="/" method="get">
 				

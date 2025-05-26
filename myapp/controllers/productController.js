@@ -2,6 +2,7 @@ const datos = require("../db/datos");
 const db = require(`../database/models`);
 const Producto = db.Producto; 
 const Comentario = db.Comentario;
+const Op = db.Sequelize.Op; 
 
 const productController = {
     
@@ -12,7 +13,7 @@ const productController = {
         Producto.findByPk(productoBuscado, {
             include: [
                 {
-                    association: "comentarios", //trae los comentarios del prducto
+                    association: "usuarios", //trae los comentarios del prducto
                     include: [{ association: "usuarios" }] // dentro de cada comentario, trae el usuario que lo hizo 
                 },
                 { association: "usuarios" } // trae el usuario que publico el producto
@@ -63,21 +64,20 @@ const productController = {
         }, 
 
     buscar: function (req, res) {
-        let busqueda = req.query.name; //busca el query del forms
+        //return res.send(req.query)
+        let busqueda = req.query.search; //busca el query del forms
 
         Producto.findAll({
-            where:{ name: {[Op.like]: '%' + busqueda + '%' }}, //buscar producto que coincida con la busqueda
+            where:{ nombre: {[Op.like]: '%' + busqueda + '%' }}, //buscar producto que coincida con la busqueda
             include: [{
                 association: "usuarios" //trae datos del usuario para ver quien publico cada producto buscado
             }]
         })
 
         .then(function (resultados) {
-            if (resultados.length === 0) { //si no hay resultados, 
-                return res.render("search-results", {resultados: [], //se muestra la vista con el mensaje
-                    mensaje: "No hay resultados para la búsqueda"})
+            if (resultados === undefined) { //si no hay resultados, 
+                return res.render("search-results", {resultados}) //se muestra la vista con el mensaje 
             }
-
             res.render("search-results", { productos: resultados }); //si hay resultados, se muestran los productos
             
         });
