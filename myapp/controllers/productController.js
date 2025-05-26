@@ -75,10 +75,11 @@ const productController = {
         })
 
         .then(function (resultados) {
-            if (resultados === undefined) { //si no hay resultados, 
-                return res.render("search-results", {resultados}) //se muestra la vista con el mensaje 
-            }
-            res.render("search-results", { productos: resultados }); //si hay resultados, se muestran los productos
+        //return res.send(resultados)
+           return res.render("search-results", {productos: resultados}) 
+        })
+        .catch(function (error) {
+            return res.send(error)
             
         });
         
