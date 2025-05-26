@@ -28,14 +28,14 @@
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<% for (let i = 0; i < comentarios.length; i++) { %>  <!--Este for hará que se muestre cada comentario dentro de datos, con su foto, usuario y texto correspondiente-->
+						<% for (let i = 0; i < comentarios.usuarios.length; i++) { %>  <!--Este for hará que se muestre cada comentario dentro de datos, con su foto, usuario y texto correspondiente-->
 							<article>
-								<img src="/images/users/<%= comentarios[i].usuarios.fotoDePerfil %>" alt=""> <!-- 
+								<img src="/images/users/<%= comentarios.usuarios[i].fotoDePerfil %>" alt=""> <!-- 
 								pone la foto de perfil del usuario que comento-->
 								<div class="data">
 									<p class="user">
-									<strong> <a href="/users/profile"><%= comentarios[i].usuarios.email %> </a> </strong> <!--lleva al usuario que comento-->
-									 <%= comentarios[i].texto %></p>
+									<strong> <a href="/users/profile"><%= detalle[i].usuarios.email %> </a> </strong> <!--lleva al usuario que comento-->
+									 <%= comentarios.usuarios[i].comentario %></p>
 								</div>
 							</article>
 						<% } %>
