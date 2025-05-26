@@ -94,7 +94,7 @@ const productController = {
             productoId: req.params.id, //id del producto del comentario
         })
         .then(function () {
-            return res.redirect('/products/id/' + req.params.id);
+            return res.redirect('/products/id/' + usuarioId);
           })
           .catch(function (error) {
             return res.send("Error al crear el comentario: " + error)
