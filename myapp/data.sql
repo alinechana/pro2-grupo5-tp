@@ -7,6 +7,7 @@ email VARCHAR(250) NOT NULL UNIQUE,
 contrasenia VARCHAR(500) NOT NULL, 
 fecha DATE,
 dni INT UNIQUE NOT NULL,
+foto VARCHAR(250) NOT NULL,
 createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 deletedAt TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP 
@@ -18,6 +19,7 @@ INSERT INTO usuarios VALUES
 "justi2005",
 "2005-01-05",
 46789567,
+"fotoJusti.png",
 DEFAULT,
 null, 
 null
@@ -27,6 +29,7 @@ null
 "alu2005",
 "2005-11-06",
 46023567,
+"fotoAlu.png",
 DEFAULT,
 null, 
 null
@@ -36,6 +39,7 @@ null
 "jochu2006",
 "2006-05-12",
 47384229,
+"fotoJochu.png",
 DEFAULT,
 null, 
 null
@@ -45,6 +49,7 @@ null
 "clara2006",
 "2006-07-15",
 47034789,
+"fotoClara.png",
 DEFAULT,
 null, 
 null
@@ -54,6 +59,7 @@ null
 "delfi2005",
 "2005-10-04",
 46578902,
+"fotoDelfi.png",
 DEFAULT,
 null, 
 null
@@ -68,7 +74,7 @@ createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 deletedAt TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP, 
 usuarioId INT UNSIGNED, 
-FOREIGN KEY (usuarioId) REFERENCES usuarios(id)
+FOREIGN KEY (usuarioId) REFERENCES usuarios(id),
 );
 
 INSERT INTO productos VALUES 
@@ -170,7 +176,7 @@ createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 deletedAt TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP, 
 usuarioId INT UNSIGNED, 
-FOREIGN KEY (usuarioId) REFERENCES usuarios(id),
+FOREIGN KEY (usuarioId) REFERENCES usuarios(id)
 productoId INT UNSIGNED, 
 FOREIGN KEY (productoId) REFERENCES productos(id)
 );
