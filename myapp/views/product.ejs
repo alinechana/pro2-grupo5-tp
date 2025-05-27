@@ -27,25 +27,28 @@
 					<p> <%= detalle.nombre %> </p>
 					<p class="product-detail-description"> <%= detalle.descripcion %></p> <!-- para acceder al detalle con la descripcion y foto del producto-->
 				</article>
-				<div class="col-12 col-lg-4">
+				<div class="col-12 col-lg-4"> <!-- El IF sirve para que se incluyan los comments que son null o aquellos que tienen ususario-->
 					<section class="comments">
-						<% for (let i = 0; i < comentarios.length; i++) { %>  <!--Este for hará que se muestre cada comentario dentro de datos, con su foto, usuario y texto correspondiente-->
-							<article>
-								<img src="/images/users/<%= comentarios[i].usuario.foto %>" alt=""> <!-- 
-								pone la foto de perfil del usuario que comento-->
-								<div class="data">
-									<p class="user">
-									<strong> <a href="/users/profile"><%= comentarios[i].usuario.email %> </a> </strong> <!--lleva al usuario que comento-->
-									 <%= comentarios[i].comentario %></p>
-								</div>
-							</article>
-						<% } %>
+						<% for (let i = 0; i < comentarios.length; i++) { 
+							if (comentarios[i].usuario) { %> 
+						 <article>
+						   <img src="/images/users/<%= comentarios[i].usuario.foto %>" alt="">
+						   <div class="data">
+							 <p class="user">
+							   <strong>
+								 <a href="/users/profile/<%= comentarios[i].usuario.id %>"><%= comentarios[i].usuario.email %></a>
+							   </strong> 
+							   <%= comentarios[i].comentario %>
+							 </p>
+						   </div>
+						 </article>
+					   <% } } %>
 
 					</section>
 					<% if (locals.user != undefined) { %>
 
 					<form class="form" action="/products/comentario/<%= detalle.id %>" method="POST">
-						<input class="form-input" name= "texto" type="text" value="" placeholder="Agregar comentario">
+						<input class="form-input" name= "comentario" type="text" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
 

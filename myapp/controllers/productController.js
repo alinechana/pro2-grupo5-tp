@@ -90,12 +90,12 @@ const productController = {
         // falta si no esta logueado 
 
         Comentario.create({
-            texto: req.body.texto, //lo busca en el forms
+            comentario: req.body.comentario, //lo busca en el forms
             usuarioId: req.session.user.id, //id del usuario que comentó
             productoId: req.params.id, //id del producto del comentario
         })
         .then(function () {
-            return res.redirect('/products/id/' + usuarioId);
+            return res.redirect('/products/id/' +  req.params.id);
           })
           .catch(function (error) {
             return res.send("Error al crear el comentario: " + error)
