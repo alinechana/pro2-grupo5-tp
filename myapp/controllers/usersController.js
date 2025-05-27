@@ -122,17 +122,18 @@ const usersController = {
 
   profile: function (req, res) {
     
-    let usuarioLogueado = req.session.user;
+    let idDelUsuario = req.params.id;
 
-    Producto.findAll({
-      where: {usuarioId: usuarioLogueado.id}
+    Usuario.findByPk(idDelUsuario, {
+      include: [{ association: "productos" }]
     })
     
-    .then(function (resultado) {
+    .then(function (usuarioEncontrado) {
       //return res.send(resultado)
-      res.render("profile", {usuario: usuarioLogueado,
-        productos: resultado,
-        totalProductos: resultado.length})
+      res.render("profile", {
+        usuario: usuarioEncontrado,
+        productos: usuarioEncontrado.productos,
+        totalProductos: usuarioEncontrado.productos.length})
       
     })
     .catch(function (error) {
