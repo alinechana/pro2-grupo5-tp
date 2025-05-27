@@ -172,6 +172,10 @@ hr {
   margin-bottom: 30px;
 }
 
+.detalleName {
+  margin-left: 40px;
+}
+
 .products-title {
   font-size: 2.4em;
   font-weight: 400;
@@ -652,6 +656,13 @@ textarea.form-input {
   font-family: "Jost", sans-serif;
   font-style: normal;
   font-size: 15px;
+}
+
+.idPublicado {
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color:var(--gray);
 }
 
 

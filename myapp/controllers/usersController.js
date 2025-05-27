@@ -51,7 +51,7 @@ const usersController = {
           foto: req.body.foto
         })
           .then(function (user) {
-            return res.redirect("/") //si se creo el usuario, lo lleva a home
+            return res.redirect("/users/login") //si se creo el usuario, lo lleva a home
           })
           .catch(function (error) {
             return res.send("Error al crear el usuario: " + error)

@@ -24,7 +24,7 @@
 			<div class="rowDetalle"> <!-- esta es la pagina del DETALLE del producto donde cuando apretas el producto en el index se dirige a esta pag con la foto y los comentarios-->
 				<article class="col-12 col-lg-8 product-detail-info">
 					<img src="/images/products/<%= detalle.foto %>" alt="" class="product-detail-img">
-					<p> <%= detalle.nombre %> </p>
+					<p class="products-title detalleName"> <%= detalle.nombre %> </p>
 					<p class="product-detail-description"> <%= detalle.descripcion %></p> <!-- para acceder al detalle con la descripcion y foto del producto-->
 				</article>
 				<div class="col-12 col-lg-4"> <!-- El IF sirve para que se incluyan los comments que son null o aquellos que tienen ususario-->
