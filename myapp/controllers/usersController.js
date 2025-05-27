@@ -47,7 +47,8 @@ const usersController = {
           email: email,
           contrasenia: passEncriptada,
           fecha: req.body.fecha,
-          dni: req.body.dni
+          dni: req.body.dni,
+          foto: req.body.foto
         })
           .then(function (user) {
             return res.redirect("/") //si se creo el usuario, lo lleva a home
@@ -84,13 +85,13 @@ const usersController = {
       where: [{ email: userInfo.email }]
     })
       .then(function (resultado) {
-        let email = resultado.email
-        let password = resultado.contrasenia
-
         if (resultado == undefined) { //si no existe ese mail, mustra mensaje
           return res.send ("El email no está registrado")
           
         }
+
+        let email = resultado.email
+        let password = resultado.contrasenia
 
         if (bcrypt.compareSync(userInfo.contrasenia, password)) {
           //poner en session
