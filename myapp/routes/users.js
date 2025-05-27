@@ -12,7 +12,7 @@ router.post("/userLogin", usersController.loginCreate);
 
 router.get("/logout", usersController.logout);
 
-router.get("/profile", usersController.profile);
+router.get("/profile/:id", usersController.profile);
 
 
 //router.get(`/login`, usersController.login); 

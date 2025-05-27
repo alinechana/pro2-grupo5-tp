@@ -34,11 +34,11 @@
 						</figure>
 					
 					<article class="product-box_data">
-						<p class="id"> Producto publicado por: <%= datos[i].usuario.email %> </p>
 						<h2 class="productoNombre"> <%= datos[i].nombre %> </h2>
 						<p class="descripcion"> <%= datos[i].descripcion %> </p> 
 					</article>
 				</section>
+				<p class="id"> <a href="/users/profile/<%= datos[i].usuario.id %>">Producto publicado por: <%= datos[i].usuario.email %></a></p>
 				</div>
 			<% } %>
 
