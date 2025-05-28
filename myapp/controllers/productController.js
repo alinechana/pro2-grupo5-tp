@@ -46,14 +46,14 @@ const productController = {
     }, 
     
     agregarPost: function (req, res) { // procesa los datos, los agarra del formulario y realiza las acciones correspondientes 
-
             Producto.create({
                 imagen: req.body.imagen, 
                 nombre: req.body.producto, 
                 descripcion: req.body.descripcion, 
+                id: req.session.id,
             })
-            .then(function () {
-                return res.redirect('/product-add',{usuario: datos.usuario}) ;
+            .then(function (resultado) {
+                return res.render('/product-add', {producto: resultado}) ;
               })
               .catch(function (error) {
                 return res.send("Error al agregar el producto " + error)
