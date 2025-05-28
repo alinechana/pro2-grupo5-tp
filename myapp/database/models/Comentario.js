@@ -53,7 +53,7 @@ module.exports = function (sequelize, dataTypes){
         Comentario.belongsTo(models.Producto, {
             as: "producto", 
             foreignKey: "productoId"
-        }); 
+        }); //asocio comentario con productos ya que un comentario pertenece a un producto
     }
 
     return Comentario;

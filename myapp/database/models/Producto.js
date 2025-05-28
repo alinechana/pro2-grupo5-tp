@@ -62,7 +62,7 @@ module.exports = function (sequelize, dataTypes){
         Producto.hasMany(models.Comentario, {
             as: "comentarios", 
             foreignKey: "productoId"
-        }); 
+        }); //asocio el producto con comentarios ya que un producto tiene muchos comentarios
     };
     
     return Producto; 

@@ -8,7 +8,7 @@ const Producto = db.Producto;
 const usersController = {
 
   register: function (req, res) { //si ya esta logueado, lo manda a su perfil
-    if (req.session.user != undefined) {  //user falta login 
+    if (req.session.user != undefined) {  
       return res.redirect("/users/login")
 
     } else {
@@ -28,7 +28,7 @@ const usersController = {
     }
 
     db.Usuario.findOne({ //busca si ya existe el mail en la base de datos
-      where: [{ email: email }]
+      where: [{ email: email }]  //tiene que coincidir el email con alguno en la base de datos si ya existe
     })
       .then(function (resultado) {
         
@@ -75,7 +75,7 @@ const usersController = {
   },
 
   loginCreate: function (req, res) {
-    let userInfo = {
+    let userInfo = { //tomo todos los datos del forms para despues procesarlos
       email: req.body.email,
       contrasenia: req.body.contraseña,
       recordarme: req.body.recordarme
@@ -85,7 +85,7 @@ const usersController = {
       where: [{ email: userInfo.email }]
     })
       .then(function (resultado) {
-        if (resultado == undefined) { //si no existe ese mail, mustra mensaje
+        if (resultado == undefined) { //si no existe ese mail, muestra mensaje
           return res.send ("El email no está registrado")
           
         }
@@ -93,7 +93,7 @@ const usersController = {
         let email = resultado.email
         let password = resultado.contrasenia
 
-        if (bcrypt.compareSync(userInfo.contrasenia, password)) {
+        if (bcrypt.compareSync(userInfo.contrasenia, password)) {  //compara que sea la contraseña correcta
           //poner en session
           req.session.user = resultado;
         

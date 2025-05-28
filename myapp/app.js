@@ -22,13 +22,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//middleware de config de session
+//middleware de config de session --> accion que se ejecuta entre el req y el res
 app.use(session({
   secret: "FindsYCreate_base", 
   resave: false, 
   saveUninitialized: true}));
 
-//middleware de poner session en locals
+//middleware de poner session en locals --> lo que me va a permitir utilizar en las vistas
 app.use(function (req, res, next) {
   if (req.session.user != undefined) {
     res.locals.user = req.session.user;

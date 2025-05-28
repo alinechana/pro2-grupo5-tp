@@ -69,7 +69,7 @@ const productController = {
         let busqueda = req.query.search; //busca el query del forms
 
         Producto.findAll({
-            where:{ nombre: {[Op.like]: '%' + busqueda + '%' }}, //buscar producto que coincida con la busqueda
+            where:{ nombre: {[Op.like]: '%' + busqueda + '%' }}, //buscar producto que coincida con la busqueda --> el where es el filtro o la condición
             include: [{
                 association: "usuario" //trae datos del usuario para ver quien publico cada producto buscado
             }]
@@ -87,7 +87,7 @@ const productController = {
     },
 
     comentar: function (req, res) {
-        // falta si no esta logueado 
+        
 
         Comentario.create({
             comentario: req.body.comentario, //lo busca en el forms
