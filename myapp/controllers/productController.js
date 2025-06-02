@@ -35,25 +35,28 @@ const productController = {
       },
 
     agregar: function (req, res) {  // --> esta es ruta GET
+      
         if (req.session.user != undefined) {  
-            return res.redirect("/products/product-add") //si esta logueado lo manda a product add
+            return res.render("product-add") //si esta logueado lo manda a product add
       
         } else {
-            return res.render("login") //lo que hace es que si no esta logueado lo manda a logearse
+            return res.render("/users/login") //lo que hace es que si no esta logueado lo manda a logearse
       
         }
 
     }, 
     
     agregarPost: function (req, res) { // procesa los datos, los agarra del formulario y realiza las acciones correspondientes 
-            Producto.create({
-                imagen: req.body.imagen, 
+           
+        Producto.create({
+                foto: req.body.imagen, 
                 nombre: req.body.producto, 
                 descripcion: req.body.descripcion, 
-                id: req.session.id,
+                usuarioId: req.session.user.id,
             })
             .then(function (resultado) {
-                return res.render('/product-add', {producto: resultado}) ;
+                
+                return res.redirect('/');
               })
               .catch(function (error) {
                 return res.send("Error al agregar el producto " + error)

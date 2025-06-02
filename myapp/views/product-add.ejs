@@ -25,9 +25,9 @@
 
 			<% if (locals.user != undefined) { %>
 
-				<form class="formAdd" action="/" method="POST">
+				<form class="formAdd" action="/products/product-add" method="POST">
 				
-					<input type="file" name="imagen" class="seleccionar" value="" > 
+					<input type="text" name="imagen" id="add" value="" placeholder="Imagen"> 
 					<input type="text" name="producto" id="add" value="" placeholder="Nombre"> 
 					<input type="text" name="descripcion" id="add" value="" placeholder="Descripcion"> 
 	

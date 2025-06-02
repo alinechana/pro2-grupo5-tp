@@ -95,6 +95,7 @@ const usersController = {
 
         if (bcrypt.compareSync(userInfo.contrasenia, password)) {  //compara que sea la contraseña correcta
           //poner en session
+         
           req.session.user = resultado;
         
           //check de recordarme
